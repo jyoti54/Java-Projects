@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
-import java.util.List;
 
 @Entity
 @Table(name="t_order_line_items")
@@ -17,7 +16,7 @@ import java.util.List;
 @NoArgsConstructor
 public class OrderLineItems {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String skuCode;
     private BigDecimal price;

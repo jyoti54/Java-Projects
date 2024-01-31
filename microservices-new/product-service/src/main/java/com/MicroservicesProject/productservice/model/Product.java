@@ -19,12 +19,6 @@ public class Product {
     private String id;
     private String name;
     private String description;
-    private int price;
+    private BigDecimal price;
 
-//    public Product(String id, String name, String description, BigDecimal price) {
-//        this.id=id;
-//        this.name=name;
-//        this.description=description;
-//        this.price=price;
-//    }
 }
