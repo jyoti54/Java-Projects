@@ -13,21 +13,36 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 import reactor.netty.http.client.HttpClient;
 
+//@Configuration
+//public class WebClientConfig {
+//
+//    @Bean
+////    @LoadBalanced
+//    public WebClient webClient() {
+//
+//        return WebClient.builder().build();
+//    }
+////    @Bean
+////    @Primary
+////    public WebClient webClient() {
+////        HttpClient httpClient = HttpClient.create().resolver(DefaultAddressResolverGroup.INSTANCE);
+////        return WebClient.builder()
+////                .clientConnector(new ReactorClientHttpConnector(httpClient))
+////                .build();
+////    }
+//}
+
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.reactive.function.client.WebClient;
+
 @Configuration
 public class WebClientConfig {
 
     @Bean
-//    @LoadBalanced
-    public WebClient webClient() {
-
-        return WebClient.builder().build();
+    @LoadBalanced
+    public WebClient.Builder webClientBuilder() {
+        return WebClient.builder();
     }
-//    @Bean
-//    @Primary
-//    public WebClient webClient() {
-//        HttpClient httpClient = HttpClient.create().resolver(DefaultAddressResolverGroup.INSTANCE);
-//        return WebClient.builder()
-//                .clientConnector(new ReactorClientHttpConnector(httpClient))
-//                .build();
-//    }
 }
