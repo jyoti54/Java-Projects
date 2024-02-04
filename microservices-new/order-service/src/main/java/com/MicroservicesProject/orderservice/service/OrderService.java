@@ -42,11 +42,11 @@ public class OrderService {
                 .map(OrderLineItems::getSkuCode)
                 .toList();
 
-        order.setOrderLineItemsList(orderLineItems);
+//        order.setOrderLineItemsList(orderLineItems);
 
-        List<String >skuCode = order.getOrderLineItemsList().stream()
-                .map(OrderLineItems::getSkuCode)
-                .toList();
+//        List<String >skuCode = order.getOrderLineItemsList().stream()
+//                .map(OrderLineItems::getSkuCode)
+//                .toList();
 
         // Call Inventory Service, and place order if product is in stock
         InventoryResponse[] inventoryResponsesArray = webClient.get()
